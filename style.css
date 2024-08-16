@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.left-section, .right-section {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 50px;
+    width: 150px;
+    margin-right: 20px;
+}
+
+.logo {
+    background-image: url("logo.png");
+    background-size: cover;
+    height: 50px;
+    width: 100%;
+}
+
+.nav-bar .item {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.2rem; /* Reduced font size */
+    font-weight: 400;
+    color: #333;
+}
+
+.nav-bar .item.generate {
+    margin-right: 20px;
+}
+
+.nav-bar .item.history {
+    margin-right: 15px;
+}
+
+.nav-bar .profile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    height: 50px;
+    width: 150px;
+    border: 1px solid white;
+    padding: 0 15px;
+}
+
+.nav-bar .profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.nav-bar .profile .name {
+    margin-left: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.nav-bar .profile .dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.nav-bar .profile .dropdown a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.nav-bar .profile .dropdown a:hover {
+    background-color: #f1f1f1;
+}
+
+body {
+    background-color: white; /* Set background color to black */
+    color: white; /* Set text color to white for contrast */
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.gif-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0; /* Space between GIF containers */
+}
+
+.gif-container img {
+    margin: 0 10px; /* Space between GIFs */
+    width: 150px; /* Set uniform width */
+    height: 150px; /* Set uniform height */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Adjust shadow for visibility on black background */
+    object-fit: cover; /* Ensure the GIFs fit within the set dimensions */
+}
+
+.nav-bar {
+    height: 60px;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: black; /* Keep nav bar text readable */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-color: #f9f9f9;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-input {
+    width: 300px;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.generate-btn {
+    width: 150px;
+    padding: 10px;
+    font-size: 1rem;
+    color: white;
+    background-color: #007bff; /* Blue color */
+    border: none;
+    border-radius: 5px; /* Rounded edges */
+    cursor: pointer;
+}
+
+.generate-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
