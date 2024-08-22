@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400&display=swap" rel="stylesheet">
-    <script src="index.js"></script>
+    <script src="./javascript/index.js"></script>
     <title>Wav2lip</title>
 </head>
 <body>
@@ -23,29 +23,33 @@
             </div>
             <div class="right-section">
                 <div class="profile" onclick="toggleDropdown()" id="myDropdown">
-                    <img src="user.png" alt="User Profile">
+                    <img src="./pics/user.png" alt="User Profile">
                     <div class="name">User</div>
                     <div class="dropdown" id="dropdownMenu">
                         <a href="#">Profile</a>
                         <a href="#">Settings</a>
-                        <a href="login.html">Logout</a>
+                        <a href="sigin.html">Logout</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="gif-container">
-            <img src="1.gif" alt="GIF 1">
-            <img src="2.webp" alt="GIF 2">
-            <img src="3.gif" alt="GIF 3">
-            <img src="4.webp" alt="GIF 4">
-            <img src="5.webp" alt="GIF 5">
-        </div>
-        <div class="gif-container">
-            <img src="6.webp" alt="GIF 6">
-            <img src="7.webp" alt="GIF 7">
-            <img src="8.webp" alt="GIF 8">
-            <img src="9.webp" alt="GIF 9">
-            <img src="10.webp" alt="GIF 10">
+        
+        <!-- GIF Scroll Section -->
+        <div class="gif-scroll">
+            <button class="scroll-btn left">&lt;</button>
+            <div class="gif-container">
+                <img src="./GIF/10.webp" alt="GIF 1">
+                <img src="GIF/2.webp" alt="GIF 2">
+                <img src="GIF/3.gif" alt="GIF 3">
+                <img src="GIF/4.webp" alt="GIF 4">
+                <img src="GIF/5.webp" alt="GIF 5">
+                <img src="GIF/6.webp" alt="GIF 6">
+                <img src="GIF/7.webp" alt="GIF 7">
+                <img src="GIF/8.webp" alt="GIF 8">
+                <img src="GIF/9.webp" alt="GIF 9">
+                <img src="GIF/10.webp" alt="GIF 10">
+            </div>
+            <button class="scroll-btn right">&gt;</button>
         </div>
     </header>
     <main>

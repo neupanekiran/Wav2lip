@@ -9,6 +9,14 @@
     align-items: center;
 }
 
+.nav-bar {
+    display: flex;
+    justify-content: space-between; /* Distributes space between left and right sections */
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .nav-logo {
     height: 50px;
     width: 150px;
@@ -16,7 +24,7 @@
 }
 
 .logo {
-    background-image: url("logo.png");
+    background-image: url("../pics/logo.png");
     background-size: cover;
     height: 50px;
     width: 100%;
@@ -24,7 +32,7 @@
 
 .nav-bar .item {
     font-family: 'Sora', sans-serif;
-    font-size: 1.2rem; /* Reduced font size */
+    font-size: 1.2rem;
     font-weight: 400;
     color: #333;
 }
@@ -35,6 +43,10 @@
 
 .nav-bar .item.history {
     margin-right: 15px;
+}
+
+.nav-bar .right-section {
+    margin-left: auto; /* Pushes the right section to the far right */
 }
 
 .nav-bar .profile {
@@ -86,37 +98,56 @@
 }
 
 body {
-    background-color: white; /* Set background color to black */
-    color: white; /* Set text color to white for contrast */
+    background-color: white;
+    color: black;
     margin: 0;
     font-family: sans-serif;
     box-sizing: border-box;
 }
 
+.gif-scroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.scroll-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.scroll-btn:hover {
+    color: #007bff;
+}
+
 .gif-container {
     display: flex;
-    justify-content: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Hide scrollbar on Firefox */
+    white-space: nowrap;
     align-items: center;
-    margin: 20px 0; /* Space between GIF containers */
+    width: 70%; /* Adjust width to control how many GIFs are visible */
+    max-width: 800px; /* Limit the max width */
+    justify-content: center;
+}
+
+.gif-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar on Chrome */
 }
 
 .gif-container img {
     margin: 0 10px; /* Space between GIFs */
-    width: 150px; /* Set uniform width */
-    height: 150px; /* Set uniform height */
+    width: 200px; /* Increased width */
+    height: 200px; /* Increased height */
     border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Adjust shadow for visibility on black background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for GIFs */
     object-fit: cover; /* Ensure the GIFs fit within the set dimensions */
-}
-
-.nav-bar {
-    height: 60px;
-    background-color: whitesmoke;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    color: black; /* Keep nav bar text readable */
 }
 
 main {
@@ -124,7 +155,9 @@ main {
     justify-content: center;
     align-items: center;
     flex: 1;
-    background-color: #f9f9f9;
+    background-color: white;
+    
+    padding: 20px;
 }
 
 .input-section {
@@ -147,12 +180,12 @@ main {
     padding: 10px;
     font-size: 1rem;
     color: white;
-    background-color: #007bff; /* Blue color */
+    background-color: #007bff;
     border: none;
-    border-radius: 5px; /* Rounded edges */
+    border-radius: 5px;
     cursor: pointer;
 }
 
 .generate-btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
 }
