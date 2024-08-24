@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            flex-direction: column; /* Align items in a column */
+            text-align: center; /* Center text */
+        }
+
+        .loading-container {
+            display: flex;
+            flex-direction: column; /* Align items in a column */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading-slider {
+            margin-top: 20px; /* Space between GIF and loading text */
+            color: white;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+        }
+
+        #slideshow {
+            max-width: 100%;
+            max-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <img id="slideshow" src="./GIF/10.webp" alt="GIF Slideshow">
+        <div class="loading-slider">
+            <span class="loading-text">Loading your GIF ...</span>
+        </div>
+    </div>
+
+    <script>
+        // Array of GIF paths
+        const gifs = [
+            "./GIF/10.webp",
+            "./GIF/2.webp",
+            "./GIF/3.gif",
+            "./GIF/4.webp",
+            "./GIF/5.webp",
+            "./GIF/6.webp",
+            "./GIF/7.webp",
+            "./GIF/8.webp",
+            "./GIF/9.webp"
+        ];
+
+        let currentIndex = 0;
+        const imgElement = document.getElementById('slideshow');
+
+        // Function to change the GIF every 2 seconds
+        function changeGIF() {
+            currentIndex = (currentIndex + 1) % gifs.length; // Increment the index, looping back to 0
+            imgElement.src = gifs[currentIndex]; // Change the src of the image element
+        }
+
+        // Change GIF every 2 seconds (2000 milliseconds)
+        setInterval(changeGIF, 2000);
+    </script>
+</body>
+</html>
