@@ -1,5 +1,3 @@
-
-
 // JavaScript for Dropdown Menu
 function toggleDropdown() {
     const dropdown = document.getElementById('dropdownMenu');
@@ -15,60 +13,71 @@ window.onclick = function(event) {
         }
     }
 };
- document.getElementById('btn').addEventListener('click', toggle);
-// JavaScript for Popup Toggle
-function toggle() {
-    // JavaScript for Loading Animation
-var percent = document.querySelector('.percent');
-var progress = document.querySelector('.progress');
-var count = 4;
-var per = 16;
-var loading = setInterval(animate, 50);
 
-function animate() {
-    if (count >= 100 && per >= 400) {
-        clearInterval(loading);
-    } else {
-        per += 4;
-        count += 1;
+// JavaScript for Popup Toggle and Progress Bar
+function toggle() {
+    var percent = document.querySelector('.percent');
+    var progress = document.querySelector('.progress');
+    var count = 0;
+    var per = 0;
+    var loading = setInterval(animate, 50);
+
+    function animate() {
+        if (count >= 100 && per >= 400) {
+            clearInterval(loading);
+        } else {
+            per += 4;
+            count += 1;
+            progress.style.width = per + 'px';
+            percent.textContent = count + '%';
+        }
+    }
+
+    function startLoading() {
+        count = 0; // Reset count to 0
+        per = 0;   // Reset progress to 0
         progress.style.width = per + 'px';
         percent.textContent = count + '%';
+        loading = setInterval(animate, 50);
     }
-}
 
-function startLoading() {
-    count = 0; // Reset count to 0
-    per = 0;   // Reset progress to 0
-    progress.style.width = per + 'px';
-    percent.textContent = count + '%';
-    loading = setInterval(animate, 50);
-}
+    // Toggle visibility of the popup and blur
     var blur = document.getElementById("blur");
     var popup = document.getElementById("popup");
     blur.classList.toggle("active");
     popup.classList.toggle("active");
-    
-    // Select elements
-    var element1 = document.getElementById('input-section');
-    var element2 = document.getElementById('gif');
 
-    // Change className from 'null' to 'hidden'
+    // Manage visibility of the input section
+    var element1 = document.getElementById('input-section');
     if (element1.classList.contains('null')) {
         element1.classList.replace('null', 'hidden');
-    }
-    if (element2.classList.contains('null')) {
-        element2.classList.replace('null', 'hidden');
     }
 }
 
-// Adding event listener to button
-document.getElementById('btn').addEventListener('click', function() {
-    // Select elements
-    var element1 = document.getElementById('input-section');
-  
+// GIF selection logic
+document.querySelectorAll('.gif-item').forEach(gif => {
+    gif.addEventListener('click', function() {
+        // Deselect all GIFs
+        document.querySelectorAll('.gif-item').forEach(g => g.classList.remove('selected'));
+        
+        // Select the clicked GIF
+        this.classList.add('selected');
 
-    // Change className from 'null' to 'hidden'
-    if (element1.classList.contains('null')) {
-        element1.classList.replace('null', 'hidden');
-    }
+        // Enable the input section
+        var inputSection = document.getElementById('input-section');
+        inputSection.classList.remove('hidden');
+        inputSection.classList.add('null');
+        
+        // Enable the input field
+        document.querySelector('.input-field').disabled = false;
+    });
+});
+
+// Disable the input field initially
+document.querySelector('.input-field').disabled = true;
+
+// Existing event listener for the button
+document.getElementById('btn').addEventListener('click', function() {
+    // Ensure the progress bar starts
+    toggle();
 });

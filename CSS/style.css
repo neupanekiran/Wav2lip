@@ -144,13 +144,19 @@ body {
     object-fit: cover;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    padding: 5px;
 }
 
 .gif-item:hover {
     transform: scale(1.1);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
 
+}
+ /* Add a border or other visual indicator to the selected GIF */
+.gif-item.selected {
+    border: 2px solid grey;
+    padding: 3px; /* Adjust padding to maintain size */
+}
 /* Main Section */
 main {
     display: flex;
