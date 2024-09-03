@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400&display=swap" rel="stylesheet">
-    <script src="./javascript/index.js"></script>
+    <script src="./javascript/index.js" defer></script>
     <title>Wav2lip</title>
 </head>
+
 <body>
     <header>
         <div class="nav-bar">
@@ -18,8 +20,8 @@
                         <!-- Add your logo image here -->
                     </div>
                 </div>
-                <div class="item generate">Generate</div>
-                <div class="item history">History</div>
+                <div class="item generate"><a href="index.html">Generate</a></div>
+                <div class="item history"><a href="his.html">History</a></div>
             </div>
             <div class="right-section">
                 <div class="profile" onclick="toggleDropdown()" id="myDropdown" style="border-radius: 25px; display: flex;">
@@ -34,27 +36,40 @@
             </div>
         </div>
         <div class="gif-gallery">
-            <div class="gif-row">
-                <img src="./GIF/1.gif" alt="GIF 1" class="gif-item">
-                <img src="./GIF/2.webp" alt="GIF 2" class="gif-item">
-                <img src="./GIF/3.gif" alt="GIF 3" class="gif-item">
-                <img src="./GIF/4.webp" alt="GIF 4" class="gif-item">
-                <img src="./GIF/5.webp" alt="GIF 5" class="gif-item">
-            </div>
-            <div class="gif-row">
-                <img src="./GIF/6.webp" alt="GIF 6" class="gif-item">
-                <img src="./GIF/7.webp" alt="GIF 7" class="gif-item">
-                <img src="./GIF/8.webp" alt="GIF 8" class="gif-item">
-                <img src="./GIF/9.webp" alt="GIF 9" class="gif-item">
-                <img src="./GIF/10.webp" alt="GIF 10" class="gif-item">
-            </div>
+            <div class="gif-container" id="blur">
+                <div class="gif-row">
+                    <img src="./GIF/1.gif" alt="GIF 1" class="gif-item">
+                    <img src="./GIF/2.webp" alt="GIF 2" class="gif-item">
+                    <img src="./GIF/3.gif" alt="GIF 3" class="gif-item">
+                    <img src="./GIF/4.webp" alt="GIF 4" class="gif-item">
+                    <img src="./GIF/5.webp" alt="GIF 5" class="gif-item">
+                </div>
+                <div class="gif-row">
+                    <img src="./GIF/6.webp" alt="GIF 6" class="gif-item">
+                    <img src="./GIF/7.webp" alt="GIF 7" class="gif-item">
+                    <img src="./GIF/8.webp" alt="GIF 8" class="gif-item">
+                    <img src="./GIF/9.webp" alt="GIF 9" class="gif-item">
+                    <img src="./GIF/10.webp" alt="GIF 10" class="gif-item">
+                </div>
+            </div>  
         </div>
     </header>
     <main>
-        <div class="input-section">
-            <input type="text" placeholder="Enter the Text to be Generated" class="text-input">
-            <button class="generate-btn">Generate</button>
+        <div class="input-section null" id="input-section">
+            <input type="text" placeholder="Type here" class="input-field" />
+            <button class="generate-btn"  id ="btn">Generate</button>
         </div>
     </main>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <div class="loading">
+                <label class="percent">100%</label>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+        </div>
+    </div> 
 </body>
+
 </html>
