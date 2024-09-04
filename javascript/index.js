@@ -16,6 +16,14 @@ window.onclick = function(event) {
 
 // JavaScript for Popup Toggle and Progress Bar
 function toggle() {
+    var inputSection = document.getElementById('input-section');
+    var inputField = inputSection.querySelector('.input-field');
+
+    if (inputField && inputField.value.trim() === '') {
+        alert("Please enter a prompt");
+        return; // Exit the function to prevent further execution
+    }
+
     var percent = document.querySelector('.percent');
     var progress = document.querySelector('.progress');
     var count = 0;
@@ -48,9 +56,8 @@ function toggle() {
     popup.classList.toggle("active");
 
     // Manage visibility of the input section
-    var element1 = document.getElementById('input-section');
-    if (element1.classList.contains('null')) {
-        element1.classList.replace('null', 'hidden');
+    if (inputSection.classList.contains('null')) {
+        inputSection.classList.replace('null', 'hidden');
     }
 }
 
