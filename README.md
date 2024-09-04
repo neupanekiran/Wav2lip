@@ -10,3 +10,5 @@ Wav2lip is the  new Lip sync platform where users can select the GIF and  enter 
 # Preview 
 ![PHOTO-2024-09-03-00-37-05](https://github.com/user-attachments/assets/9324c22d-8fd2-4e31-b1ac-ab7d7372c94b)
 ![PHOTO-2024-09-03-00-33-00](https://github.com/user-attachments/assets/f9238727-79d5-40c3-8cc2-1bc7db720765)
+
+![PHOTO-2024-09-04-21-10-04](https://github.com/user-attachments/assets/8270dfcc-dc98-46a0-8808-7cabfd86deb0)
