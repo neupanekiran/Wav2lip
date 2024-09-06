@@ -6,55 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="CSS/sigin.css">
-    <title> Login Page</title>
+    <script type="module" src="./javascript/auth.js"></script>
+    <title>Login Page</title>
 </head>
 
 <body>
-
     <div class="container" id="container">
+        <!-- Sign Up Form -->
         <div class="form-container sign-up">
             <form>
                 <h1>Create Account</h1>
                 <div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon" id="google-register"><i class="fa-brands fa-google-plus-g"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
-            
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <button style=" color: white;">Sign Up</button>
+                <input type="text" placeholder="Name" id="name-register">
+                <input type="email" placeholder="Email" id="register-email">
+                <input type="password" placeholder="Password" id="register-pass">
+                <button type="button" style="color: white;" id="registerUser">Sign Up</button>
             </form>
         </div>
+
+        <!-- Sign In Form -->
         <div class="form-container sign-in">
             <form>
                 <h1>Sign In</h1>
-                <div class="social-icons" style=" color: white;">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                <div class="social-icons" style="color: white;">
+                    <a href="#" class="icon" id="google-login"><i class="fa-brands fa-google-plus-g"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email password</span>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
+                <input type="email" placeholder="Email" id="sign-in-email">
+                <input type="password" placeholder="Password" id="sign-in-pass">
                 <a href="#">Forget Your Password?</a>
-                <button style=" color: white;">Sign In</button>
+                <button type="button" style="color: white;" id="loginUser">Sign In</button>
             </form>
         </div>
+
+        <!-- Toggle for Sign In/Sign Up -->
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
                     <h1>Welcome Back!</h1>
-                    <p>Enter your personal details to use all of site features</p>
-                    <button class="hidden" id="login">Sign In</button>
+                    <p>Enter your personal details to use all site features</p>
+                    <button class="hidden" id="showLogin">Sign In</button>
                 </div>
                 <div class="toggle-panel toggle-right">
-                    <h1>Hello, User</h1>
-                    <p> Please Register with your personal details to use all of site features</p>
-                    <button class="hidden" id="register">Sign Up</button>
+                    <h1>Hello, User!</h1>
+                    <p>Please Register with your personal details to use all site features</p>
+                    <button class="hidden" id="showRegister">Sign Up</button>
                 </div>
             </div>
         </div>
@@ -62,16 +66,18 @@
 
     <script>
         const container = document.getElementById('container');
-const registerBtn = document.getElementById('register');
-const loginBtn = document.getElementById('login');
+        const registerBtn = document.getElementById('showRegister');
+        const loginBtn = document.getElementById('showLogin');
 
-registerBtn.addEventListener('click', () => {
-    container.classList.add("active");
-});
+        // Toggle for registration form
+        registerBtn.addEventListener('click', () => {
+            container.classList.add('active');
+        });
 
-loginBtn.addEventListener('click', () => {
-    container.classList.remove("active");
-});
+        // Toggle for login form
+        loginBtn.addEventListener('click', () => {
+            container.classList.remove('active');
+        });
     </script>
 </body>
 
