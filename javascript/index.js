@@ -14,16 +14,29 @@ window.onclick = function(event) {
     }
 };
 
-// JavaScript for Popup Toggle and Progress Bar
-function toggle() {
-    var inputSection = document.getElementById('input-section');
-    var inputField = inputSection.querySelector('.input-field');
+// GIF selection logic
+document.querySelectorAll('.gif-item').forEach(gif => {
+    gif.addEventListener('click', function() {
+        // Deselect all GIFs
+        document.querySelectorAll('.gif-item').forEach(g => g.classList.remove('selected'));
+        
+        // Select the clicked GIF
+        this.classList.add('selected');
+        document.querySelector('.input-field').disabled = false;  // Enable the input field
+    });
+});
 
-    if (inputField && inputField.value.trim() === '') {
+// Handle Generate Button Click
+document.getElementById('btn').addEventListener('click', function() {
+    var inputField = document.querySelector('.input-field');
+
+    // Check if the input is empty
+    if (inputField.value.trim() === '') {
         alert("Please enter a prompt");
-        return; // Exit the function to prevent further execution
+        return;
     }
 
+    // Start the loading progress bar
     var percent = document.querySelector('.percent');
     var progress = document.querySelector('.progress');
     var count = 0;
@@ -41,50 +54,13 @@ function toggle() {
         }
     }
 
-    function startLoading() {
-        count = 0; // Reset count to 0
-        per = 0;   // Reset progress to 0
-        progress.style.width = per + 'px';
-        percent.textContent = count + '%';
-        loading = setInterval(animate, 50);
-    }
-
     // Toggle visibility of the popup and blur
     var blur = document.getElementById("blur");
     var popup = document.getElementById("popup");
-    blur.classList.toggle("active");
-    popup.classList.toggle("active");
+    blur.classList.add("active");
+    popup.classList.add("active");
 
-    // Manage visibility of the input section
-    if (inputSection.classList.contains('null')) {
-        inputSection.classList.replace('null', 'hidden');
-    }
-}
-
-// GIF selection logic
-document.querySelectorAll('.gif-item').forEach(gif => {
-    gif.addEventListener('click', function() {
-        // Deselect all GIFs
-        document.querySelectorAll('.gif-item').forEach(g => g.classList.remove('selected'));
-        
-        // Select the clicked GIF
-        this.classList.add('selected');
-
-        // Enable the input section
-        var inputSection = document.getElementById('input-section');
-        inputSection.classList.remove('hidden');
-        inputSection.classList.add('null');
-        
-        // Enable the input field
-        document.querySelector('.input-field').disabled = false;
-    });
-});
-
-// Disable the input field initially
-document.querySelector('.input-field').disabled = true;
-
-// Existing event listener for the button
-document.getElementById('btn').addEventListener('click', function() {
-    // Ensure the progress bar starts
-    toggle();
+    // Hide the input section and the generate button
+    document.getElementById('input-section').classList.add('hidden');
+    document.querySelector('.generate-btn').classList.add('hidden');
 });

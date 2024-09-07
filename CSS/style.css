@@ -232,6 +232,7 @@ main {
 
 #popup.active {
     display: block;
+    
 }
 
 #blur.active {

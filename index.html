@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400&display=swap" rel="stylesheet">
-    <script src="./javascript/index.js"></script>
+    <script defer src="./javascript/index.js"></script> <!-- Ensure your script loads after the DOM -->
     <title>Wav2lip</title>
 </head>
 
@@ -38,11 +38,11 @@
         <div class="gif-gallery">
             <div class="gif-container" id="blur">
                 <div class="gif-row">
-                    <img src="./GIF/1.gif" alt="GIF 1" class="gif-item option">
-                    <img src="./GIF/2.webp" alt="GIF 2" class="gif-item option">
-                    <img src="./GIF/3.gif" alt="GIF 3" class="gif-item option">
-                    <img src="./GIF/4.webp" alt="GIF 4" class="gif-item option">
-                    <img src="./GIF/5.webp" alt="GIF 5" class="gif-item option">
+                    <img src="./GIF/1.gif" alt="GIF 1" class="gif-item">
+                    <img src="./GIF/2.webp" alt="GIF 2" class="gif-item">
+                    <img src="./GIF/3.gif" alt="GIF 3" class="gif-item">
+                    <img src="./GIF/4.webp" alt="GIF 4" class="gif-item">
+                    <img src="./GIF/5.webp" alt="GIF 5" class="gif-item">
                 </div>
                 <div class="gif-row">
                     <img src="./GIF/6.webp" alt="GIF 6" class="gif-item">
@@ -54,16 +54,18 @@
             </div>  
         </div>
     </header>
+
     <main>
         <div class="input-section null" id="input-section">
-            <input type="text" placeholder="Type here" class="input-field" />
-            <button class="generate-btn"  id ="btn">Generate</button>
+            <input type="text" placeholder="Type here" class="input-field" disabled /> <!-- Initially disabled -->
+            <button class="generate-btn" id="btn">Generate</button>
         </div>
     </main>
+
     <div id="popup" class="popup">
         <div class="popup-content">
             <div class="loading">
-                <label class="percent">100%</label>
+                <label class="percent">0%</label>
                 <div class="progress-bar">
                     <div class="progress"></div>
                 </div>
